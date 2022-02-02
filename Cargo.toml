@@ -9,4 +9,7 @@ edition = "2021"
 path = "src/problem1"
 [dependencies.problem2]
 path = "src/problem2"
-
+[dependencies.problem3]
+path = "src/problem3"
+[dependencies.problem4]
+path = "src/problem4"
