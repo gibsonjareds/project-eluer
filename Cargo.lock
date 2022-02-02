@@ -7,8 +7,13 @@ name = "problem1"
 version = "0.0.1"
 
 [[package]]
+name = "problem2"
+version = "0.0.1"
+
+[[package]]
 name = "project-euler"
 version = "0.1.0"
 dependencies = [
  "problem1",
+ "problem2",
 ]
