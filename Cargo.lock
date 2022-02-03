@@ -13,9 +13,23 @@ version = "0.0.1"
 [[package]]
 name = "problem3"
 version = "0.0.1"
+dependencies = [
+ "utils",
+]
 
 [[package]]
 name = "problem4"
+version = "0.0.1"
+
+[[package]]
+name = "problem5"
+version = "0.0.1"
+dependencies = [
+ "utils",
+]
+
+[[package]]
+name = "problem6"
 version = "0.0.1"
 
 [[package]]
@@ -26,4 +40,11 @@ dependencies = [
  "problem2",
  "problem3",
  "problem4",
+ "problem5",
+ "problem6",
+ "utils",
 ]
+
+[[package]]
+name = "utils"
+version = "0.0.1"

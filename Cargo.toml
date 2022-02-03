@@ -4,7 +4,8 @@ version = "0.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
+[dependencies.utils]
+path = "src/utils"
 [dependencies.problem1]
 path = "src/problem1"
 [dependencies.problem2]
@@ -13,3 +14,7 @@ path = "src/problem2"
 path = "src/problem3"
 [dependencies.problem4]
 path = "src/problem4"
+[dependencies.problem5]
+path = "src/problem5"
+[dependencies.problem6]
+path = "src/problem6"
