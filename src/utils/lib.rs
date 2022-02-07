@@ -23,17 +23,57 @@ pub fn prime_factors(num: i64) -> Vec<i64> {
 
 }
 
+pub fn is_prime( n:i64) -> bool{
+    if n == 1{
+        return false;
+    }
+    if n < 4 {
+        return true;
+    }
+    if n % 2 == 0{
+        return false;
+    }
+    if n < 9{
+        return true;
+    }
+    if n % 3 == 0 {
+        return false;
+    }
+    let r = (n as f64).sqrt() as i64;
+    let mut f = 5;
+    let mut prime = true;
+    while f <= r {
+        if n % f == 0 {
+            prime = false;
+            break;
+        } 
+        if n % (f+2) == 0 {
+            prime = false;
+            break;
+        }
+        f += 6;
+    }
+    prime
+}
+
 
 #[cfg(test)]
 mod tests{
     use super::*;
     #[test]
-    fn test_can_get_primes(){
+    fn test_can_get_prime_factors(){
         assert_eq!(prime_factors(13195), vec![5, 7, 13, 29])
     }
     #[test]
-    fn test_nine(){
+    fn test_nine_factors(){
         assert_eq!(prime_factors(9), vec![3,3])
     }
-
+    #[test]
+    fn test_13_is_prime(){
+        assert_eq!(is_prime(13), true)
+    }
+    #[test]
+    fn test_15_is_not_prime(){
+        assert_eq!(is_prime(15), false)
+    }
 }
