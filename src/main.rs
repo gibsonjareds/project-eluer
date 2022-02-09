@@ -6,6 +6,7 @@ extern crate problem5;
 extern crate problem6;
 extern crate problem7;
 extern crate problem8;
+extern crate problem9;
 
 fn main() {
     problem1::run();
@@ -16,4 +17,5 @@ fn main() {
     problem6::run();
     problem7::run();
     problem8::run();
+    problem9::run();
 }

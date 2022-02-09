@@ -47,6 +47,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "problem9"
+version = "0.0.1"
+dependencies = [
+ "utils",
+]
+
+[[package]]
 name = "project-euler"
 version = "0.1.0"
 dependencies = [
@@ -58,6 +65,7 @@ dependencies = [
  "problem6",
  "problem7",
  "problem8",
+ "problem9",
  "utils",
 ]
 
