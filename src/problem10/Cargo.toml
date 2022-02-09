@@ -1,0 +1,10 @@
+[package]
+name = "problem10"
+version = "0.0.1"
+
+[lib]
+name = "problem10"
+path = "lib.rs"
+
+[dependencies.utils]
+path = "../utils"
