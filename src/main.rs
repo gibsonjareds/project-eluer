@@ -1,16 +1,12 @@
-extern crate problem1;
-extern crate problem2;
-extern crate problem3;
-extern crate problem4;
-extern crate problem5;
-extern crate problem6;
-extern crate problem7;
-extern crate problem8;
-extern crate problem9;
-extern crate problem10;
-extern crate problem11;
+use std::time::Instant;
+
 
 fn main() {
+    let start = Instant::now();
+    run();
+    println!("Completed in {:?}", start.elapsed());
+}
+fn run(){
     problem1::run();
     problem2::run();
     problem3::run();
@@ -22,4 +18,6 @@ fn main() {
     problem9::run();
     problem10::run();
     problem11::run();
+    problem12::run();
 }
+

@@ -21,6 +21,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "problem12"
+version = "0.0.1"
+dependencies = [
+ "utils",
+]
+
+[[package]]
 name = "problem2"
 version = "0.0.1"
 
@@ -74,6 +81,7 @@ dependencies = [
  "problem1",
  "problem10",
  "problem11",
+ "problem12",
  "problem2",
  "problem3",
  "problem4",

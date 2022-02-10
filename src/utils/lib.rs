@@ -1,5 +1,7 @@
+#![feature(drain_filter)]
+
+
 pub fn prime_factors(num: i64) -> Vec<i64> {
-    
     let mut factors = vec![];
     let mut num2 = num;
 
@@ -22,7 +24,22 @@ pub fn prime_factors(num: i64) -> Vec<i64> {
     factors
 
 }
+pub fn e_sieve (num: i64)-> Vec<i64> {
+   let bound:i64 = (num as f64).sqrt() as i64 + 1;
+   let mut factors:Vec<i64> = vec![];
 
+    if num <= 1{
+        return factors;
+    }
+
+    factors = (3..bound).step_by(2).collect::<Vec<i64>>();
+    factors.insert(2, 0);
+    let mut i = 1;
+    while i < factors.len(){
+        factors.drain_filter(|x| *x != factors[i] && *x % factors[i] ==0);
+    }
+    factors
+}
 pub fn is_prime( n:i64) -> bool{
     if n == 1{
         return false;
