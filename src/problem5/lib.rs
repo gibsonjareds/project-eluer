@@ -6,9 +6,9 @@ pub fn run(){
     println!("Problem 5: {}", solution(20));
 }
 
-fn solution(max:i64) -> i64{
-    let mut num:i64 = 1;
-    let limit:i64 = (max as f64).sqrt() as i64;
+fn solution(max:u64) -> u64{
+    let mut num:u64 = 1;
+    let limit:u64 = (max as f64).sqrt() as u64;
     let mut check = true;
     let mut factors = Vec::new();
     for i in 2..(max+1) {

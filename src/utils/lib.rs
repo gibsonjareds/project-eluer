@@ -1,7 +1,7 @@
 #![feature(drain_filter)]
 
 
-pub fn prime_factors(num: i64) -> Vec<i64> {
+pub fn prime_factors(num: u64) -> Vec<u64> {
     let mut factors = vec![];
     let mut num2 = num;
 
@@ -9,7 +9,7 @@ pub fn prime_factors(num: i64) -> Vec<i64> {
             num2 = num2 / 2;
             factors.push(2)
         }
-        for i in (3..((num2 as f64).sqrt() as i64) + 1).step_by(2){
+        for i in (3..((num2 as f64).sqrt() as u64) + 1).step_by(2){
             while num2 % i == 0{
                 num2 = num2 / i;
                 factors.push(i);
@@ -24,21 +24,26 @@ pub fn prime_factors(num: i64) -> Vec<i64> {
     factors
 
 }
-pub fn e_sieve (num: i64)-> Vec<i64> {
-   let bound:i64 = (num as f64).sqrt() as i64 + 1;
-   let mut factors:Vec<i64> = vec![];
-
-    if num <= 1{
-        return factors;
+pub fn e_sieve (num: u64)-> Option<Vec<u64>> {
+    let mut is_prime = vec![true;num as usize];
+    let mut primes = vec![];
+    // 1 and lower have no real prime factors
+    if num <= 1 {
+        return None;
     }
-
-    factors = (3..bound).step_by(2).collect::<Vec<i64>>();
-    factors.insert(2, 0);
-    let mut i = 1;
-    while i < factors.len(){
-        factors.drain_filter(|x| *x != factors[i] && *x % factors[i] ==0);
+    if num == 2 {
+        return Some(vec![])
     }
-    factors
+    for i in 2..num as usize {
+        if !is_prime[i] {
+            continue;
+        }
+        for e in ((i * i)..num as usize).step_by(i){
+            is_prime[e] = false;
+        }
+        primes.push(i as u64);
+    }
+    Some(primes)
 }
 pub fn is_prime( n:i64) -> bool{
     if n == 1{
@@ -92,5 +97,9 @@ mod tests{
     #[test]
     fn test_15_is_not_prime(){
         assert_eq!(is_prime(15), false)
+    }
+    #[test]
+    fn test_primes_under_nine_sieve(){
+        assert_eq!(e_sieve(9).unwrap(), vec![2,3,5,7]);
     }
 }

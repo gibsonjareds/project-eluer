@@ -17,12 +17,12 @@ fn solution(number_of_divisors:usize) -> i64{
     while prod <= number_of_divisors {
         num = n * (n+1) / 2;
         prod = 1;
-        let mut factors = utils::prime_factors(num as i64);
+        let mut factors = utils::prime_factors(num as u64);
         factors.sort();
         while factors.len() > 1{
             let index = factors.iter().rposition(|&x| x == factors[0]).unwrap();
             if index > 0 {
-                let subfactors:Vec<i64> = factors.drain(0..(index+1)).collect();
+                let subfactors:Vec<u64> = factors.drain(0..(index+1)).collect();
                 prod *= subfactors.len() + 1;
             }else{
                 prod *= 2;
