@@ -10,7 +10,6 @@ fn bench(f: &dyn Fn() -> ()) {
     f();
     println!("run {:?}", start.elapsed());
     println!("===================================");
-    println!("===================================");
 }
 fn run() {
     println!("===================================");
@@ -27,4 +26,5 @@ fn run() {
     bench(&problem10::run);
     bench(&problem11::run);
     bench(&problem12::run);
+    println!("===================================");
 }
