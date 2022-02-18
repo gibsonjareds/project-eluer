@@ -30,3 +30,5 @@ path = "src/problem10"
 path = "src/problem11"
 [dependencies.problem12]
 path = "src/problem12"
+[dependencies.problem13]
+path = "src/problem13"
