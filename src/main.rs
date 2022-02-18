@@ -27,5 +27,6 @@ fn run() {
     bench(&problem11::run);
     bench(&problem12::run);
     bench(&problem13::run);
+    bench(&problem14::run);
     println!("===================================");
 }
